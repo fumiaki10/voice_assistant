@@ -1,0 +1,7 @@
+cffi==2.0.0
+numpy==2.4.4
+pycparser==3.0
+sounddevice==0.5.5
+soundfile==0.13.1
+SpeechRecognition==3.16.1
+typing_extensions==4.15.0
