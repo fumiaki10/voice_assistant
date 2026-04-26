@@ -1,6 +1,8 @@
 import sounddevice as sd
 import soundfile as sf
 import speech_recognition as sr
+import webbrowser
+import urllib.parse
 
 filename = "voice.wav"
 seconds = 5
@@ -21,6 +23,11 @@ with sr.AudioFile(filename) as source:
 try:
     text = recognizer.recognize_google(audio_data, language="ja-JP")
     print("認識結果:", text)
+
+    query = urllib.parse.quote(text)
+    url = f"https://www.google.com/search?q={query}"
+    webbrowser.open(url)
+
 except sr.UnknownValueError:
     print("聞き取れませんでした")
 except sr.RequestError as e:
